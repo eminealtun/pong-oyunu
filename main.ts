@@ -21,9 +21,11 @@ solled = game.createSprite(2, 4)
 sagled = game.createSprite(3, 4)
 let top = game.createSprite(randint(0, 4), 0)
 puan = 0
-let can = 5
+let can = 3
 basic.pause(500)
 basic.forever(function () {
+    top.set(LedSpriteProperty.X, randint(0, 4))
+    top.set(LedSpriteProperty.Y, 0)
     for (let index = 0; index < 4; index++) {
         top.change(LedSpriteProperty.Y, 1)
         basic.pause(500)
@@ -39,6 +41,4 @@ basic.forever(function () {
         basic.pause(1000)
         game.gameOver()
     }
-    top.set(LedSpriteProperty.X, randint(0, 4))
-    top.set(LedSpriteProperty.Y, 0)
 })
